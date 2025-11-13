@@ -11,9 +11,9 @@ jobs:
       - name: Trigger tests in Repo 
         uses: peter-evans/repository-dispatch@v3
         with:
+          token: ${{ secrets.GH_PAT }}
           repository: JeffCompasClassrooms/se3150-testing-units-f25-SE3150-Testing-Units
           event-type: run-tests
-          token: ${{ secrets.GH_PAT }}
 #      # ---- Repository 2 ----
 #      - name: Checkout Repo 2
 #        uses: actions/checkout@v4
