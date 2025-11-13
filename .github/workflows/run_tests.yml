@@ -8,11 +8,37 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # ---- your tests go here ----
-      - name: Run test for repo 
-        run: |
-          echo "Running tests..."
-          # replace this line with your actual test command(s)
+      - name: Trigger tests in Repo 
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          repository: JeffCompasClassrooms/se3150-testing-units-f25-SE3150-Testing-Units:main
+          event-type: run-tests
+#      # ---- Repository 2 ----
+#      - name: Checkout Repo 2
+#        uses: actions/checkout@v4
+#        with:
+#          repository: 
+#          path: repo2
+#      - name: Run tests for Repo 2
+#        run: |
+#          echo "Running tests for Repo 2"
+#          cd repo2
+#          # Tests go here
+#          echo "Tests for Repo 2 complete."
+#          cd ..
+#
+#      # ---- Repository 3 ----
+#      - name: checkout Repo 3
+#        uses: actions/checkout@v4
+#        with:
+#          repository:
+#            path: repo3
+#      - name: Run tests for Repo 3
+#        run : |
+#          echo "Running tests for Repo 3"
+#          cd repo3
+#          # Tests go here
+#          echo "Tests for Repo 3 complete."
+#          cd .. 
+#
+#
