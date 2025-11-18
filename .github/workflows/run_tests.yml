@@ -15,16 +15,16 @@ jobs:
           repository: JeffCompasClassrooms/testing-units-f25-jcnaef
           event-type: run-tests
       # ---- Repository 2 ----
-      - name: Checkout Repo 2
-        uses: actions/checkout@v4
+      - name: Trigger tests in Repo 2
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GH_PAT }}
           repository: se3150/f24-testing-behaviors-jcnaef 
           event-type: run-tests
 
       # ---- Repository 3 ----
-      - name: checkout Repo 3
-        uses: actions/checkout@v4
+      - name: Trigger tests in Repo 3
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GH_PAT }}
           repository:JeffCompasClassrooms/testing-systems-jcnaef
