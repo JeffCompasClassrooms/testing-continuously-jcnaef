@@ -14,32 +14,20 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           repository: JeffCompasClassrooms/testing-units-f25-jcnaef
           event-type: run-tests
-#      # ---- Repository 2 ----
-#      - name: Checkout Repo 2
-#        uses: actions/checkout@v4
-#        with:
-#          repository: 
-#          path: repo2
-#      - name: Run tests for Repo 2
-#        run: |
-#          echo "Running tests for Repo 2"
-#          cd repo2
-#          # Tests go here
-#          echo "Tests for Repo 2 complete."
-#          cd ..
-#
-#      # ---- Repository 3 ----
-#      - name: checkout Repo 3
-#        uses: actions/checkout@v4
-#        with:
-#          repository:
-#            path: repo3
-#      - name: Run tests for Repo 3
-#        run : |
-#          echo "Running tests for Repo 3"
-#          cd repo3
-#          # Tests go here
-#          echo "Tests for Repo 3 complete."
-#          cd .. 
-#
-#
+      # ---- Repository 2 ----
+      - name: Checkout Repo 2
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          repository: se3150/f24-testing-behaviors-jcnaef 
+          event-type: run-tests
+
+      # ---- Repository 3 ----
+      - name: checkout Repo 3
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          repository:JeffCompasClassrooms/testing-systems-jcnaef
+          event-type: run-tests
+
+
