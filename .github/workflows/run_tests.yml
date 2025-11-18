@@ -12,7 +12,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GH_PAT }}
-          repository: JeffCompasClassrooms/se3150-testing-units-f25-SE3150-Testing-Units
+          repository: JeffCompasClassrooms/testing-units-f25-jcnaef
           event-type: run-tests
 #      # ---- Repository 2 ----
 #      - name: Checkout Repo 2
